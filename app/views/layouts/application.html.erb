@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <nav class="navbar justify-content-between navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/cocktails">Cocktails</a>
+    ​
+      <div id="navbarSupportedContent">
+        <div class="ml-auto flex">
+          <a class="btn btn-outline-primary my-2 my-sm-0 ml-2" href="/cocktails/new">Add Cocktail</a>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
     <%= javascript_include_tag "application", 'data-turbolinks-track': 'reload' %>
       <%= javascript_pack_tag "application" %>
