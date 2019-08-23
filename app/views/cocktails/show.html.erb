@@ -5,6 +5,7 @@
   <h1 style="font-size: 150px;"><%= @cocktail.name %></h1>
 </div>
 
+<h1>Recipe:</h1>
 <h2><% @cocktail.doses.each do |dose| %></h2>
 <p><%= dose.description %> => <%= dose.ingredient.name %> || <%= link_to "🗑", cocktail_dose_path(@cocktail.id, dose.id), method: :delete %>
 </p>
