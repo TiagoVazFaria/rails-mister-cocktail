@@ -1,8 +1,15 @@
-<h1><%= @cocktail.name %></h1>
+
+<div class="banner"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+  <h1 style="font-size: 150px;"><%= @cocktail.name %></h1>
+</div>
 
 <h2><% @cocktail.doses.each do |dose| %></h2>
 <p><%= dose.description %> => <%= dose.ingredient.name %> || <%= link_to "🗑", cocktail_dose_path(@cocktail.id, dose.id), method: :delete %>
 </p>
 <% end %>
 <%= link_to "add new dose", new_cocktail_dose_path(@cocktail.id) %>
+
+
 
