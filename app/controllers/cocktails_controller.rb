@@ -27,7 +27,7 @@ before_action :fetch_cocktail, only: [:show, :destroy]
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :photo, :photo_cache)
+    params.require(:cocktail).permit(:name, :photo)
   end
   def fetch_cocktail
     @cocktail = Cocktail.find(params[:id])
