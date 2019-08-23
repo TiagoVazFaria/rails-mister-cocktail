@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-before_action :fetch_cocktail, only: [:show]
+before_action :fetch_cocktail, only: [:show, :destroy]
   def index
     @cocktails = Cocktail.all
 
@@ -19,10 +19,15 @@ before_action :fetch_cocktail, only: [:show]
     redirect_to root_path
   end
 
+  def destroy
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.destroy
+    redirect_to root_path
+  end
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
   def fetch_cocktail
     @cocktail = Cocktail.find(params[:id])

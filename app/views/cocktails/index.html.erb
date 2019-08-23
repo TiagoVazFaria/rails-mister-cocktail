@@ -3,9 +3,12 @@
 <div class="d-flex flex-wrap">
    <% @cocktails.each do |cocktail| %>
     <div class="card mr-3">
+      <%= cl_image_tag cocktail.photo, width: 400, height: 300, crop: :fill, class: "card-img-top" %>
       <p> <%= link_to cocktail.name.capitalize, cocktail, class: "card-body" %></p>
+      <%= link_to "🗑", cocktail, method: :delete, class: "card-footer" %>
     </div>
   <% end %>
 </div>
+
 
 
